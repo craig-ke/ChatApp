@@ -49,7 +49,7 @@ public class ListImageAdapter extends RecyclerView.Adapter<ListImageAdapter.Imag
             Picasso.get().load(results.getUrls().getRegular()).into(mImageView);
             mUserTextView.setText(results.getUser().getUsername());
             mImageDescription.setText(results.getDescription());
-            mRatingView.setText("People:" + results.getUser().getTotalLikes()+ "/Likes");
+            mRatingView.setText("People:" + results.getUser().getTotalLikes()+ "viewed");
         }
     }
     @Override

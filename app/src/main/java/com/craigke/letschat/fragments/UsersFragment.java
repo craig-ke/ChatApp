@@ -50,8 +50,10 @@ public class UsersFragment extends Fragment {
     }
 
     private void readUsers() {
-        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -59,11 +61,13 @@ public class UsersFragment extends Fragment {
                 for (DataSnapshot dataSnapshot :snapshot.getChildren()){
                     User user= dataSnapshot.getValue(User.class);
 
+                    assert user != null;
+                    assert firebaseUser != null;
                     if (user.getId().equals(firebaseUser.getUid())){
                         mUser.add(user);
                     }
                 }
-            userAdapter = new UserAdapter(getContext() ,mUser);
+            userAdapter = new UserAdapter(getContext() ,mUser, false);
                 recyclerView.setAdapter(userAdapter);
             }
 

@@ -6,17 +6,17 @@
     android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:id="@+id/profile_image"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="277dp"
         android:layout_height="37dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
         android:layout_toEndOf="@id/profile_image"
         android:layout_toRightOf="@id/profile_image"
         android:text="username"
